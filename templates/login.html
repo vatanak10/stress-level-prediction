@@ -15,8 +15,8 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <div class="container">
+  <body class="px-4">
+    <div class="container max-w-[600px] md:max-w-[800px]">
       <h2 align="center">Stress Level Prediction</h2>
       <form action="/" method="post" onsubmit="return validateForm()">
         <div class="form-group">
@@ -50,148 +50,155 @@
           />
         </div>
 
-        <div class="form-group">
-          <label for="headache" class="form-label">Headache (0-7):</label>
-          <span id="headache_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="headache"
-            name="headache"
-            min="0"
-            max="7"
-            value="0"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="sleep_quality" class="form-label"
-            >Sleep Quality (0-7):</label
-          >
-          <span id="sleep_quality_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="sleep_quality"
-            name="sleep_quality"
-            min="0"
-            max="7"
-            value="0"
-            required
-          />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="form-group !mb-0">
+            <label for="headache" class="form-label">Headache (0-7):</label>
+            <span id="headache_value">0</span>
+            <input
+              type="range"
+              class="form-control max-w-[230px]"
+              id="headache"
+              name="headache"
+              min="0"
+              max="7"
+              value="0"
+              required
+            />
+          </div>
+          <div class="form-group !mb-0">
+            <label for="sleep_quality" class="form-label"
+              >Sleep Quality (0-7):</label
+            >
+            <span id="sleep_quality_value">0</span>
+            <input
+              type="range"
+              class="form-control max-w-[230px]"
+              id="sleep_quality"
+              name="sleep_quality"
+              min="0"
+              max="7"
+              value="0"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="mental_health_history" class="form-label">
+              Mental Health History:
+            </label>
+            <span id="mental_health_history_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="mental_health_history"
+                name="mental_health_history"
+                value="0"
+              />
+              <div data-emoji-rating="mental_health_history" data-max="5"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="breathing_problem" class="form-label">
+              Breathing Problem:
+            </label>
+            <span id="breathing_problem_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="breathing_problem"
+                name="breathing_problem"
+                value="0"
+              />
+              <div data-emoji-rating="breathing_problem" data-max="5"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="living_conditions" class="form-label">
+              Living Conditions:
+            </label>
+            <span id="living_conditions_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="living_conditions"
+                name="living_conditions"
+                value="0"
+              />
+              <div data-emoji-rating="living_conditions" data-max="5"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="academic_performance" class="form-label">
+              Academic Performance:
+            </label>
+            <span id="academic_performance_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="academic_performance"
+                name="academic_performance"
+                value="0"
+              />
+              <div data-emoji-rating="academic_performance" data-max="5"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="study_load" class="form-label">Study Load:</label>
+            <span id="study_load_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="study_load"
+                name="study_load"
+                value="0"
+              />
+              <div data-emoji-rating="study_load" data-max="5"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="future_career_concerns" class="form-label"
+              >Future Career Concerns:</label
+            >
+            <span id="future_career_concerns_value">0</span>
+            <div class="flex mt-2">
+              <input
+                type="hidden"
+                id="future_career_concerns"
+                name="future_career_concerns"
+                value="0"
+              />
+              <div
+                data-emoji-rating="future_career_concerns"
+                data-max="5"
+              ></div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="mental_health_history" class="form-label">
-            Mental Health History (0-5):
-          </label>
-          <span id="mental_health_history_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="mental_health_history"
-            name="mental_health_history"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="breathing_problem" class="form-label">
-            Breathing Problem (0-5):
-          </label>
-          <span id="breathing_problem_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="breathing_problem"
-            name="breathing_problem"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="living_conditions" class="form-label">
-            Living Conditions (0-5):
-          </label>
-          <span id="living_conditions_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="living_conditions"
-            name="living_conditions"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="academic_performance" class="form-label">
-            Academic Performance (0-5):
-          </label>
-          <span id="academic_performance_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="academic_performance"
-            name="academic_performance"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="study_load" class="form-label">Study Load (0-5):</label>
-          <span id="study_load_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="study_load"
-            name="study_load"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="future_career_concerns" class="form-label"
-            >Future Career Concerns (0-5):</label
-          >
-          <span id="future_career_concerns_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="future_career_concerns"
-            name="future_career_concerns"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
-        </div>
         <div class="form-group">
           <label for="extracurricular_activities" class="form-label"
-            >Extracurricular Activities (0-5):</label
+            >Extracurricular Activities:</label
           >
           <span id="extracurricular_activities_value">0</span>
-          <input
-            type="range"
-            class="form-control"
-            id="extracurricular_activities"
-            name="extracurricular_activities"
-            min="0"
-            max="5"
-            value="0"
-            required
-          />
+          <div class="flex mt-2">
+            <input
+              type="hidden"
+              id="extracurricular_activities"
+              name="extracurricular_activities"
+              value="0"
+            />
+            <div
+              data-emoji-rating="extracurricular_activities"
+              data-max="5"
+            ></div>
+          </div>
         </div>
+
         <div class="center-button">
           <button type="submit" class="btn btn-primary">Get Result</button>
         </div>

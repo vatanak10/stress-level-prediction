@@ -5,15 +5,12 @@ body {
   font-family: monospace, Arial, sans-serif;
   background-color: #f0f0f0;
   margin: 0;
-  padding: 0;
   background-image: url("bg.jpg"); /* Add your background image URL here */
   background-size: cover;
   background-position: center;
 }
 
 .container {
-  width: 60%; /* Decrease the width to 60% */
-  max-width: 600px;
   margin: 40px auto;
   background-color: #f0f0f0;
   padding: 20px;

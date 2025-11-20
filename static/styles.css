@@ -16,7 +16,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px); /* Apply blur effect */
 }
 
 h2 {
@@ -73,9 +72,9 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Result styles */
 .result-container {
-  width: 40%; /* Decrease the width to 60% on the result page */
+  width: 60%; /* Decrease the width to 60% on the result page */
   margin: auto; /* Center the result container horizontally */
-  background-color: transparent; /* Transparent background for result */
+  background-color: #f0f0f0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

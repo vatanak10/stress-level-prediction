@@ -14,44 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script>
-      // function validateForm() {
-      //   var inputs = document.getElementsByTagName("input");
-      //   for (var i = 0; i < inputs.length; i++) {
-      //     var input = inputs[i];
-      //     if (input.type === "range") {
-      //       if (!input.value || isNaN(input.value)) {
-      //         alert("Please enter a valid number for all fields.");
-      //         return false;
-      //       }
-      //     }
-      //   }
-      //   return true;
-      // }
-
-      function validateForm() {
-        const inputs = document.querySelectorAll('input[type="range"]');
-
-        for (const input of inputs) {
-          const value = parseFloat(input.value);
-          const min = parseFloat(input.min);
-          const max = parseFloat(input.max);
-
-          if (isNaN(value) || value < min || value > max) {
-            const fieldName = input.name
-              .replace(/_/g, " ")
-              .replace(/\b\w/g, (l) => l.toUpperCase());
-            alert(
-              `Please enter a valid value for ${fieldName} (${min}-${max}).`
-            );
-            input.focus();
-            return false;
-          }
-        }
-
-        return true;
-      }
-    </script>
   </head>
   <body>
     <div class="container">
@@ -67,6 +29,7 @@
             name="depression"
             min="0"
             max="25"
+            value="0"
             required
           />
         </div>
@@ -74,15 +37,15 @@
           <label for="anxiety_level" class="form-label">
             Anxiety Level (0-20):
           </label>
-          <span id="anxiety_level_value">10</span>
+          <span id="anxiety_level_value">0</span>
           <input
             type="range"
             class="form-control"
             id="anxiety_level"
             name="anxiety_level"
-            default="0"
             min="0"
             max="20"
+            value="0"
             required
           />
         </div>
@@ -97,6 +60,7 @@
             name="headache"
             min="0"
             max="7"
+            value="0"
             required
           />
         </div>
@@ -112,14 +76,15 @@
             name="sleep_quality"
             min="0"
             max="7"
+            value="0"
             required
           />
         </div>
 
         <div class="form-group">
-          <label for="mental_health_history" class="form-label"
-            >Mental Health History (0-5):</label
-          >
+          <label for="mental_health_history" class="form-label">
+            Mental Health History (0-5):
+          </label>
           <span id="mental_health_history_value">0</span>
           <input
             type="range"
@@ -128,14 +93,15 @@
             name="mental_health_history"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
 
         <div class="form-group">
-          <label for="breathing_problem" class="form-label"
-            >Breathing Problem (0-5):</label
-          >
+          <label for="breathing_problem" class="form-label">
+            Breathing Problem (0-5):
+          </label>
           <span id="breathing_problem_value">0</span>
           <input
             type="range"
@@ -144,13 +110,14 @@
             name="breathing_problem"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
         <div class="form-group">
-          <label for="living_conditions" class="form-label"
-            >Living Conditions (0-5):</label
-          >
+          <label for="living_conditions" class="form-label">
+            Living Conditions (0-5):
+          </label>
           <span id="living_conditions_value">0</span>
           <input
             type="range"
@@ -159,13 +126,14 @@
             name="living_conditions"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
         <div class="form-group">
-          <label for="academic_performance" class="form-label"
-            >Academic Performance (0-5):</label
-          >
+          <label for="academic_performance" class="form-label">
+            Academic Performance (0-5):
+          </label>
           <span id="academic_performance_value">0</span>
           <input
             type="range"
@@ -174,6 +142,7 @@
             name="academic_performance"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
@@ -187,6 +156,7 @@
             name="study_load"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
@@ -202,6 +172,7 @@
             name="future_career_concerns"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
@@ -217,6 +188,7 @@
             name="extracurricular_activities"
             min="0"
             max="5"
+            value="0"
             required
           />
         </div>
@@ -226,18 +198,6 @@
       </form>
     </div>
 
-    <script>
-      // Get all input fields
-      const inputs = document.querySelectorAll('input[type="range"]');
-
-      inputs.forEach((input) => {
-        const value = document.querySelector(`#${input.id}_value`);
-        // value.textContent = input.value;
-
-        input.addEventListener("input", (event) => {
-          value.textContent = event.target.value;
-        });
-      });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
